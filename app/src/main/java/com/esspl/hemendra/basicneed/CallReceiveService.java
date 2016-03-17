@@ -90,7 +90,9 @@ public class CallReceiveService extends Service {
         BroadcastReceiver listenPowerButtonClick = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Log.d(TAG, "onReceive: Service vitare mu Power button ku dekhibi  "+intent.getAction());
+                Log.d(TAG, "onReceive: Service vitare mu Power button ku dekhibi  " + intent.getAction());
+                if (intent.getAction().equalsIgnoreCase(Intent.ACTION_SCREEN_OFF) || intent.getAction().equalsIgnoreCase(Intent.ACTION_SCREEN_OFF))
+                    stopSelf();
             }
         };
         registerReceiver(listenPowerButtonClick,new IntentFilter("android.intent.action.SCREEN_OFF"));

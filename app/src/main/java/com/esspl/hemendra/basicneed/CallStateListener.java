@@ -17,8 +17,8 @@ public class CallStateListener extends BroadcastReceiver {
         Toast.makeText(context, "Incoming Call Be alert.....", Toast.LENGTH_SHORT).show();
        //intent = new Intent(context, CallDetailsService.class);
         intent.setAction("ACCESS_PHONE_STATE");
-        //intent.setClass(context,CallReceiveService.class);
-        intent.setClass(context,CallDetailsService.class);
+        intent.setClass(context,CallReceiveService.class);
+        //intent.setClass(context,CallDetailsService.class);
         context.startService(intent);
 
     }
